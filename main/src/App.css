@@ -19,8 +19,9 @@
 
 .App-logo {
   justify-content: flex-start;
-  height: 200px;
-  padding: 40px;
+  height: 120px;
+  padding-left: 40px;
+  padding-top: 10px;
 }
 
 header {
@@ -28,6 +29,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center; /* Pour centrer le contenu verticalement */
+  padding-bottom: -calc(100vh - 120px); /* Pour que le header ne prenne pas de place dans le flux */
 }
 
 .menu {
@@ -68,12 +70,25 @@ a {
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
   color: rgb(25, 25, 33);
-  margin-top: 4%;
+  margin-top: 20px;
 }
 
 .impDoc {
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-top: 4%;
+  margin-top: 8%;
+}
+
+.listeAvatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 2%;
+}
+
+.paddingmerdique {
+  padding-left: 100px;
+  padding-right: 100px;
 }
