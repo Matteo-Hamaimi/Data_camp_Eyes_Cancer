@@ -1,13 +1,13 @@
-// Doc.tsx
 import React from 'react';
+import Map from './Map';
 
-function Doc() {
+const Doc: React.FC = () => {
   return (
     <div>
-      <h1>Find a Doctor</h1>
-      {/* Contenu de la page pour trouver un médecin */}
+      <h1>Document</h1>
+      <Map />
     </div>
   );
-}
+};
 
 export default Doc;
