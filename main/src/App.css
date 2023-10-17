@@ -1,51 +1,79 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Belanosima&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.All-App {
+  height: 100vh;
+  width: 100vw;  
+}
+
+.background-image {
+  background-image: url('../src/assets/background.jpg.avif'); /* Remplacez par le chemin correct */
+  background-size: cover; /* Ajuste la taille de l'image pour couvrir tout l'élément parent */
+  background-position: center; /* Centre l'image */
+  background-repeat: no-repeat; /* Empêche la répétition de l'image */
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  justify-content: flex-start;
+  height: 200px;
+  padding: 40px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header {
+  width: 100vw;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center; /* Pour centrer le contenu verticalement */
+}
+
+.menu {
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(25, 25, 33);
+  margin-right: 20px;
 }
 
-body {
-  margin: 0;
+ul {
+  list-style: none;
   padding: 0;
-  background-color: white; /* Fond blanc pour la page */
-  display: flex;
+  margin: 0;
+}
+
+li {
+  display: inline;
+  margin: 0 10px;
+}
+
+a {
+  text-decoration: none; /* Supprimer le soulignement des liens */
+  color: black; /* Couleur du texte des liens (à ajuster selon vos préférences) */
+}
+
+.titre {
+  text-align: center;
+  justify-content: center;
+  /* mettre les mot Health et Care en violet */
+  font-family: 'Belanosima', sans-serif;
+  font-size: 50px;
+  color: rgb(25, 25, 33);
+}
+
+.chapeau {
+  text-align: center;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  color: rgb(25, 25, 33);
+  margin-top: 4%;
+}
+
+.impDoc {
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* Hauteur minimale de la vue pour centrer le contenu */
-}
-
-.container {
-  background-color: transparent; /* Fond transparent pour la zone centrale */
-  padding: 20px; /* Espacement autour de la zone centrale */
-  border: 2px solid blue; /* Bordure bleue autour de la zone centrale */
-  border-radius: 10px; /* Coins arrondis de la zone centrale */
-  box-shadow: 0px 0px 10px rgba(0, 0, 255, 0.5); /* Ombre autour de la zone centrale */
   text-align: center;
-}
-
-.blue-box {
-  background-color: blue; /* Couleur de fond bleue pour la zone centrale */
-  color: white; /* Couleur du texte en blanc à l'intérieur de la zone bleue */
-  padding: 20px; /* Espacement à l'intérieur de la zone bleue */
-  border-radius: 10px; /* Coins arrondis de la zone bleue */
+  margin-top: 4%;
 }
