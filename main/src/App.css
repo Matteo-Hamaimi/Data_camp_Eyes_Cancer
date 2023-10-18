@@ -92,3 +92,32 @@ a {
   padding-left: 100px;
   padding-right: 100px;
 }
+
+.formMap {
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 20px;
+}
+
+.formulaire {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+}
+
+.profilDoc {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(229, 229, 229);
+  border-radius: 5px;
+}
+
+.experience {
+  background-color: rgb(187, 187, 187);
+  width: 250px;
+  align-items: center;
+}

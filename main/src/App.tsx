@@ -3,8 +3,8 @@ import React from 'react';
 import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom'; // Utilisez "Routes" au lieu de "Route"
 import logo from "./assets/inEYES.png";
 import './App.css';
-import Doc from './Doc';
 import AboutUs from './AboutUs';
+import FindDoctor from './FindDoctor';
 
 function App() {
   return (
@@ -37,7 +37,7 @@ function App() {
             <AboutUs />
           } />
           <Route path="/find-doctor" element={ // Utilisez "element" au lieu de "component"
-            <Doc />
+            <FindDoctor />
           } />
         </Routes>
       </div>
