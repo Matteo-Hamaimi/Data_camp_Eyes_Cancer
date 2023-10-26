@@ -7,7 +7,8 @@
 
 .All-App {
   height: 100vh;
-  width: 100vw;  
+  width: 100vw; 
+  z-index: 3;
 }
 
 .background-image {
@@ -15,13 +16,16 @@
   background-size: cover; /* Ajuste la taille de l'image pour couvrir tout l'élément parent */
   background-position: center; /* Centre l'image */
   background-repeat: no-repeat; /* Empêche la répétition de l'image */
+  z-index: 3;
 }
 
 .App-logo {
+  height: 75px;
+  width: 300px;
   justify-content: flex-start;
-  height: 120px;
   padding-left: 40px;
   padding-top: 10px;
+  z-index: 3;
 }
 
 header {
@@ -30,6 +34,7 @@ header {
   justify-content: space-between;
   align-items: center; /* Pour centrer le contenu verticalement */
   padding-bottom: -calc(100vh - 120px); /* Pour que le header ne prenne pas de place dans le flux */
+  z-index: 3;
 }
 
 .menu {
@@ -37,6 +42,7 @@ header {
   justify-content: center;
   color: rgb(25, 25, 33);
   margin-right: 20px;
+  z-index: 3;
 }
 
 ul {
@@ -130,10 +136,10 @@ a {
 }
 
 .doctor-profile {
-  border: 1px solid #ccc; /* Ajoutez une bordure autour de chaque profil */
-  border-radius: 5px; /* Ajoutez des coins arrondis aux profils */
+  border: 0px solid #ccc; /* Ajoutez une bordure autour de chaque profil */
+  border-radius: 0px; /* Ajoutez des coins arrondis aux profils */
   margin-bottom: 10px; /* Ajoutez une marge en bas pour séparer les profils */
-  padding: 10px; /* Ajoutez un espacement interne aux profils */
+  padding: 2px; /* Ajoutez un espacement interne aux profils */
   background-color: #fff; /* Fond blanc pour chaque profil */
 }
 
@@ -143,4 +149,31 @@ a {
   object-fit: cover; /* Ajustement de l'image pour remplir la zone définie */
   border: 1px solid #ccc; /* Bordure autour de l'image si nécessaire */
   border-radius: 50%; /* Coins arrondis pour créer une image circulaire si nécessaire */
+  flex: 1;
+}
+
+
+.maps {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+}
+
+.doctor-list-container {
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+  border: 0px solid #ccc;
+  padding: 40px;
+  top: 0;
+  left: 0;
+  width: 20%;
+  height: 100vh;
+  z-index: 2;
+}
+
+.doctor-details{
+  flex: 2;
 }

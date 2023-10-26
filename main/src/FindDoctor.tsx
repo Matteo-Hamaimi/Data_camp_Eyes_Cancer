@@ -6,6 +6,7 @@ import Female from "./assets/Profile F.png";
 import Male from "./assets/Profile M.png";
 import icon from "./assets/Loc.png";
 import doctors from './doctors'; // Importez la liste de médecins depuis le fichier doctors.js
+import { Doctor } from './Types';
 
 
 const FindDoctor: React.FC = () => {
@@ -23,6 +24,16 @@ const FindDoctor: React.FC = () => {
     // Vous devrez implémenter la logique de recherche ici.
   };
   
+  // Créez une fonction pour gérer le clic sur un médecin
+  const handleDoctorClick = (doctor: Doctor) => {
+    // Vérifiez si la carte est initialisée
+    if (mapRef.current) {
+      // Récupérez les coordonnées du médecin
+      const { latitude, longitude } = doctor;
+      // Ajustez le zoom de la carte pour afficher les coordonnées du médecin
+      mapRef.current.setView([latitude, longitude], 13);
+    }
+  };
 
   useEffect(() => {
     if (!mapRef.current) {
@@ -40,38 +51,44 @@ const FindDoctor: React.FC = () => {
           iconAnchor: [15, 30], // Spécifiez l'ancre de l'icône (ajustez-la en fonction de votre image)
         });
       
-        L.marker([doctor.latitude, doctor.longitude], { icon: customIcon }).addTo(map);
-      
+        const marker = L.marker([doctor.latitude, doctor.longitude], { icon: customIcon }).addTo(map);
+        
       });
 
+      
       // Stockons la référence de la carte dans la variable de ref
       mapRef.current = map;
     }
   }, []);
 
+  
+
   return (
     <div className='formMap'>
-      <div className='formulaire'>
-        <form onSubmit={handleSearchSubmit} style={{ paddingBottom: "30px" }}>
-          {/* ... */}
-        </form>
-        <div className="doctor-list-container">
+      <div id="map" className='maps' style={{ height: '100vh', width: '100%' }} />
+      <div className="doctor-list-container">
         {doctors.map((doctor, index) => (
           <div className="doctor-profile" key={index}>
+            <div className="doctor-profile" key={index} onClick={() => handleDoctorClick(doctor)}>
             {/* Image en fonction du sexe du médecin */}
             {doctor.gender === 'Male' ? (
               <img src={Male} alt="Male" className="doctor-image" />
             ) : (
               <img src={Female} alt="Female" className="doctor-image" />
             )}
-
-            <div className="doctor-name">{doctor.firstName} {doctor.lastName}</div>
-            <div className="doctor-specialization">{doctor.specialization}</div>
+            <div className="doctor-details">
+              <div className="doctor-name">{doctor.firstName} {doctor.lastName}</div>
+              <div className="doctor-specialization">{doctor.specialization}</div>
+            </div>
+          </div>
           </div>
         ))}
       </div>
+      <div className='formulaire'>
+        <form onSubmit={handleSearchSubmit} style={{ paddingBottom: "30px" }}>
+          {/* ... */}
+        </form>
       </div>
-      <div id="map" className='maps' style={{ height: 'calc(100vh - 120px)', width: '1000px' }} />
     </div>
   );
 };
