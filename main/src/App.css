@@ -121,3 +121,26 @@ a {
   width: 250px;
   align-items: center;
 }
+
+.doctor-list-container {
+  max-height: calc(85vh - 80px); /* Hauteur maximale pour la liste, ajustez-la en fonction de vos besoins */
+  overflow-y: auto; /* Activer la barre de défilement verticale si nécessaire */
+  border: 1px solid #ccc; /* Ajoutez des styles de bordure si nécessaire */
+  padding: 60px; /* Ajoutez un espacement interne si nécessaire */
+}
+
+.doctor-profile {
+  border: 1px solid #ccc; /* Ajoutez une bordure autour de chaque profil */
+  border-radius: 5px; /* Ajoutez des coins arrondis aux profils */
+  margin-bottom: 10px; /* Ajoutez une marge en bas pour séparer les profils */
+  padding: 10px; /* Ajoutez un espacement interne aux profils */
+  background-color: #fff; /* Fond blanc pour chaque profil */
+}
+
+.doctor-image {
+  width: 50px; /* Largeur souhaitée */
+  height: 50px; /* Hauteur souhaitée */
+  object-fit: cover; /* Ajustement de l'image pour remplir la zone définie */
+  border: 1px solid #ccc; /* Bordure autour de l'image si nécessaire */
+  border-radius: 50%; /* Coins arrondis pour créer une image circulaire si nécessaire */
+}
