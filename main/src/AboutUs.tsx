@@ -6,7 +6,7 @@ import Mateo from "./assets/MateoHamaimi.jpg";
 
 function AboutUs() {
   return (
-    <div>
+    <div className='background-image2'>
       <h1 className='titre'>We've got an entire team dedicated<br/>to supporting you and your business</h1>
       <p className='chapeau'>Get help 24/7, with our award-winning support network of payments experts.</p>
 

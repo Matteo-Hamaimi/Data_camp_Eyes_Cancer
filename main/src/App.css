@@ -12,36 +12,53 @@
 }
 
 .background-image {
-  background-image: url('../src/assets/background.jpg.avif'); /* Remplacez par le chemin correct */
+  background-image: url('../src/assets/fond36000.png'); /* Remplacez par le chemin correct */
   background-size: cover; /* Ajuste la taille de l'image pour couvrir tout l'élément parent */
   background-position: center; /* Centre l'image */
   background-repeat: no-repeat; /* Empêche la répétition de l'image */
   z-index: 3;
 }
 
+.background-image2 {
+  background-image: url('../src/assets/backAbout.png'); /* Remplacez par le chemin correct */
+  height: 100vh;
+  margin-top: -90px;
+  padding-top: 90px;
+  z-index: 4;
+}
+
 .App-logo {
-  height: 75px;
-  width: 300px;
-  justify-content: flex-start;
+  height: 40px;
+  width: 200px;
+  position: fixed;
   padding-left: 40px;
-  padding-top: 10px;
+  margin-right: calc(75vw);
+  margin-top: 20px;
   z-index: 3;
+}
+
+#bbouton {
+  position: fixed;
+  margin-left: calc(75vw);
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 header {
   width: 100vw;
   display: flex;
-  justify-content: space-between;
-  align-items: center; /* Pour centrer le contenu verticalement */
-  padding-bottom: -calc(100vh - 120px); /* Pour que le header ne prenne pas de place dans le flux */
+  justify-content: center;
   z-index: 3;
 }
 
 .menu {
-  align-items: center;
-  justify-content: center;
+  display: flex;
+  justify-content:first baseline;
   color: rgb(25, 25, 33);
-  margin-right: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   z-index: 3;
 }
 
@@ -52,8 +69,10 @@ ul {
 }
 
 li {
+  /* mettre une police plus foncée */
+  font-family: 'system-ui', sans-serif;
   display: inline;
-  margin: 0 10px;
+  margin: 0 30px;
 }
 
 a {
@@ -65,15 +84,16 @@ a {
   text-align: center;
   justify-content: center;
   /* mettre les mot Health et Care en violet */
-  font-family: 'Belanosima', sans-serif;
+  font-family: 'Stencil Std', sans-serif;
   font-size: 50px;
+  font-weight : bold;
   color: rgb(25, 25, 33);
 }
 
 .chapeau {
   text-align: center;
   justify-content: center;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-size: 20px;
   color: rgb(25, 25, 33);
   margin-top: 20px;
@@ -83,7 +103,7 @@ a {
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-top: 8%;
+  margin-top: 3%;
 }
 
 .listeAvatar {
@@ -176,4 +196,9 @@ a {
 
 .doctor-details{
   flex: 2;
+}
+
+#large_size {
+  background-color: rgb(255, 255, 255);
+  padding: 15px;
 }
