@@ -5,6 +5,9 @@ import './App.css';
 import Mathis from "./assets/MathisPappo.jpg";
 import Loupe from "./assets/loupe.png";
 import AidKit from "./assets/first-aid-kit.png";
+import * as Papa from 'papaparse';
+import { ParseResult } from 'papaparse';
+
 
 
 const FindDoctor: React.FC = () => {
@@ -25,15 +28,32 @@ const FindDoctor: React.FC = () => {
 
   useEffect(() => {
     if (!mapRef.current) {
-      // La carte n'est pas encore initialisée, initialisons-la
       const map = L.map('map').setView([48.876168, 2.345074], 13);
-
+  
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
       }).addTo(map);
-
-      // Stockons la référence de la carte dans la variable de ref
+  
       mapRef.current = map;
+  
+      // Lire les données CSV et afficher les médecins sur la carte
+      Papa.parse('./medecins.csv', {
+        delimiter: ';',  // Définissez le délimiteur correct
+        header: true,
+        dynamicTyping: true,
+        complete: function (results: ParseResult<any>) {
+          results.data.forEach((medecin: Record<string, any>) => {
+            // Vérifiez les coordonnées (latitude et longitude) dans les données
+            if (medecin.Coordonnées) {
+              const [latitude, longitude] = medecin.Coordonnées.split(',').map(parseFloat);
+              if (!isNaN(latitude) && !isNaN(longitude)) {
+                const marker = L.marker([latitude, longitude]).addTo(map);
+                marker.bindPopup(medecin["Nom du professionnel"]); // Afficher le nom du médecin au clic
+              }
+            }
+          });
+        },
+      });
     }
   }, []);
 
